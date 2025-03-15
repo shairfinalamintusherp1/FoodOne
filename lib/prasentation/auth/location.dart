@@ -34,6 +34,7 @@ class _LocationPageState extends State<LocationPage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             commonText(
               "Current Location",
@@ -42,40 +43,69 @@ class _LocationPageState extends State<LocationPage> {
             ),
             SizedBox(height: 10.0),
             commonText("Country"),
-            SizedBox(height: 8.0),
+            SizedBox(height: 10.0),
             Container(
-              width: 100, // Adjust width as needed
+              width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 5),
               decoration: BoxDecoration(
                 border: Border.all(color: primaryColor),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    value: selectedCountryCode,
-                    onChanged: (newValue) {
-                      setState(() {
-                        selectedCountryCode = newValue!;
-                      });
-                      print("Selected Country Code: $selectedCountryCode");
-                    },
-                    items:
-                        countryList.map((CountryModel country) {
-                          return DropdownMenuItem<String>(
-                            value: country.code,
-                            child: Row(
-                              children: [
-                                commonText(country.flag, size: 18), // Flag
-                                SizedBox(width: 5),
-                                commonText(country.code, size: 12), // Code
-                              ],
-                            ),
-                          );
-                        }).toList(),
-                  ),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  value: selectedCountryCode,
+                  onChanged: (newValue) {
+                    setState(() {
+                      selectedCountryCode = newValue!;
+                    });
+                    print("Selected Country Code: $selectedCountryCode");
+                  },
+                  items:
+                      countryList.map((CountryModel country) {
+                        return DropdownMenuItem<String>(
+                          value: country.code,
+                          child: Row(
+                            children: [
+                              commonText(
+                                "  ${country.flag}  ",
+                                size: 18,
+                              ), // Flag
+                              SizedBox(width: 5),
+                              commonText(country.name, size: 12), // Code
+                            ],
+                          ),
+                        );
+                      }).toList(),
                 ),
+              ),
+            ),
+            SizedBox(height: 20),
+            commonText("City"),
+            SizedBox(height: 10.0),
+            commonTextField(text: "Saudi Arabia", color: primaryColor),
+            SizedBox(height: 20),
+            commonText("Street"),
+            SizedBox(height: 10.0),
+            commonTextField(text: "Saudi Arabia", color: primaryColor),
+            SizedBox(height: 20),
+            commonText(
+              "Add New Location",
+              fontWeigth: FontWeight.w500,
+              size: 16,
+            ),
+            SizedBox(height: 10),
+            Container(
+              padding: EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                border: Border.all(width: 1, color: primaryColor),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.add_circle_outline),
+                  SizedBox(width: 8.0),
+                  commonText("Add New Location", color: Colors.grey),
+                ],
               ),
             ),
           ],

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodone/prasentation/auth/forget_password.dart';
-import 'package:foodone/prasentation/auth/location.dart';
-import 'package:foodone/prasentation/auth/reset_password.dart';
+import 'package:foodone/prasentation/rider_profile.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -19,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: LocationPage(),
+      home: RiderProfilePage(),
     );
   }
 }

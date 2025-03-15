@@ -36,15 +36,18 @@ Widget commonButton({
   var height = 55.0,
   VoidCallback? onPressedButton,
 }) {
-  return Container(
-    width: width,
-    height: height,
+  return InkWell(
+    onTap: onPressedButton,
+    child: Container(
+      width: width,
+      height: height,
 
-    decoration: BoxDecoration(
-      color: color,
-      borderRadius: BorderRadius.circular(8.0),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: Center(child: commonText(text, size: 16, color: textColor)),
     ),
-    child: Center(child: commonText(text, size: 16, color: textColor)),
   );
 }
 

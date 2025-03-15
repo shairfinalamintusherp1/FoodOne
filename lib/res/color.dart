@@ -20,4 +20,4 @@ const Color textSecondaryDarkColor = Color(0xFF5C5C5C);
 const Color textSecondaryLightColor = Color(0xFF9E9E9E);
 
 // White and Shades
-const Color whiteColor = Colors.white;
+const Color whiteColor = Color.fromARGB(255, 223, 223, 223);
