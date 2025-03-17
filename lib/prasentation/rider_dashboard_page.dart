@@ -180,11 +180,11 @@ class _DashboardPageState extends State<DashboardPage>
         backgroundColor: Colors.transparent,
         flexibleSpace: ClipPath(
           clipper: CustomAppBarClipper(),
-          child: Container(height: 140, color: primaryColor),
+          child: Container(height: 140.0, color: primaryColor),
         ),
         title: commonText(
           'Foodi Station',
-          size: 20,
+          size: 20.0,
           fontWeigth: FontWeight.bold,
           color: Colors.white,
         ),
@@ -207,7 +207,7 @@ class _DashboardPageState extends State<DashboardPage>
                 buildTab("Ordered", Icons.done_rounded, 1),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.0),
             Expanded(
               child: TabBarView(
                 controller: _tabController,
@@ -227,9 +227,10 @@ class _DashboardPageState extends State<DashboardPage>
   Widget buildTab(String title, IconData icon, int index) {
     bool isSelected = _tabController.index == index;
     return Container(
+      height: 80,
       padding: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.0),
         color: isSelected ? primaryColor : secondaryColor,
       ),
       child: Column(
@@ -240,8 +241,9 @@ class _DashboardPageState extends State<DashboardPage>
             children: [
               commonText(
                 "${index == 0 ? orderNotifications.length : orderedOrders.length} ",
-                size: 16,
+                size: 14.0,
                 color: Colors.white,
+                alinment: TextAlign.center,
                 fontWeigth: FontWeight.bold,
               ),
               Icon(icon, color: Colors.white),
@@ -249,8 +251,9 @@ class _DashboardPageState extends State<DashboardPage>
           ),
           commonText(
             title,
-            size: 16,
-            color: whiteColor,
+            size: 14.0,
+            color: Colors.white,
+            alinment: TextAlign.center,
             fontWeigth: FontWeight.bold,
           ),
         ],
@@ -273,45 +276,50 @@ class _DashboardPageState extends State<DashboardPage>
   Widget buildOrderCard(Map<String, dynamic> order, String statusType) {
     return Card(
       color: Colors.white,
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: 10.0),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Icon(Icons.watch_later_outlined),
-                SizedBox(width: 5),
-                commonText(order['time']),
-                Spacer(),
-                if (statusType == "pending") ...[
-                  Expanded(
-                    child: commonButton(
-                      text: "Accept",
-                      onPressedButton: () {
-                        showAcceptDialog(context, order);
-                      },
-                      height: 40,
+            SizedBox(
+              height: 30,
+              child: Row(
+                children: [
+                  Icon(Icons.watch_later_outlined),
+                  SizedBox(width: 5),
+                  commonText(order['time']),
+                  Spacer(),
+                  if (statusType == "pending") ...[
+                    Expanded(
+                      child: commonButton(
+                        text: "Accept",
+                        onPressedButton: () {
+                          showAcceptDialog(context, order);
+                        },
+                        height: 40.0,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 10),
-                  Expanded(
-                    child: commonButton(
-                      text: "Cancel",
-                      height: 40,
-                      color: secondaryColor,
-                      onPressedButton: () {
-                        setState(() {
-                          orderNotifications.remove(order);
-                        });
-                      },
+                    SizedBox(width: 10.0),
+                    Expanded(
+                      child: commonButton(
+                        text: "Cancel",
+                        height: 40.0,
+                        color: secondaryColor,
+                        onPressedButton: () {
+                          setState(() {
+                            orderNotifications.remove(order);
+                          });
+                        },
+                      ),
                     ),
-                  ),
-                ] else ...[
-                  Expanded(child: commonButton(text: "Accepted", height: 40)),
+                  ] else ...[
+                    Expanded(
+                      child: commonButton(text: "Accepted", height: 40.0),
+                    ),
+                  ],
                 ],
-              ],
+              ),
             ),
             Divider(),
             InkWell(
@@ -333,9 +341,9 @@ class _DashboardPageState extends State<DashboardPage>
                           isBold: true,
                           color: primaryColor,
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 10.0),
                         buildRichText('Time: ', order['date']),
-                        SizedBox(height: 10),
+                        SizedBox(height: 10.0),
                         buildRichText('Payment Method: ', order['payment']),
                       ],
                     ),
@@ -358,7 +366,7 @@ class _DashboardPageState extends State<DashboardPage>
     return RichText(
       text: TextSpan(
         style: TextStyle(
-          fontSize: 14,
+          fontSize: 12,
           color: Colors.black,
         ), // Default text style
         children: [
@@ -366,7 +374,7 @@ class _DashboardPageState extends State<DashboardPage>
             text: label,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 16,
+              fontSize: 14.0,
             ), // Bold label
           ),
           TextSpan(
@@ -375,7 +383,7 @@ class _DashboardPageState extends State<DashboardPage>
               fontWeight: (isBold) ? FontWeight.bold : FontWeight.w500,
               color: color,
 
-              fontSize: 14,
+              fontSize: 12.0,
             ), // Normal value
           ),
         ],
@@ -395,7 +403,7 @@ class _DashboardPageState extends State<DashboardPage>
           title: commonText(
             'Order Accept?',
             fontWeigth: FontWeight.bold,
-            size: 16,
+            size: 14.0,
           ),
           content: commonText('Are you sure you want to confirm the order?'),
           actions: [

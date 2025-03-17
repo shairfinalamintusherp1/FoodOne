@@ -43,7 +43,7 @@ class _RiderLocationPageState extends State<RiderLocationPage> {
           children: [
             commonText(
               "Current Location",
-              size: 16,
+              size: 14,
               fontWeigth: FontWeight.w500,
             ),
             SizedBox(height: 10.0),
@@ -96,7 +96,7 @@ class _RiderLocationPageState extends State<RiderLocationPage> {
             commonText(
               "Add New Location",
               fontWeigth: FontWeight.w500,
-              size: 16,
+              size: 14,
             ),
             SizedBox(height: 10),
             Container(

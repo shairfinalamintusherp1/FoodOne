@@ -5,12 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 Widget commonText(
   String text, {
   Color color = Colors.black,
-  double size = 14.0,
+  double size = 12.0,
   dynamic fontWeigth,
   dynamic softWrap,
   maxline,
   overflow,
-  dynamic alinment,
+  TextAlign? alinment = TextAlign.start,
 }) {
   return Text(
     text,
@@ -31,7 +31,7 @@ Widget commonButton({
   String text = "",
   Color color = primaryColor,
   Color textColor = Colors.white,
-  double fontSize = 20.0,
+  double fontSize = 14.0,
   var width = double.infinity,
   var height = 55.0,
   VoidCallback? onPressedButton,
@@ -52,7 +52,7 @@ Widget commonButton({
       child: Center(
         child: commonText(
           text,
-          size: 16,
+          size: fontSize,
           color: textColor,
           fontWeigth: fontWeigth,
         ),

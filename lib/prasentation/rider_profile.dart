@@ -35,99 +35,101 @@ class _RiderProfilePageState extends State<RiderProfilePage> {
           SizedBox(width: 20),
         ],
       ),
-      body: Column(
-        children: [
-          Stack(
-            alignment: Alignment.center,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stack(
+              alignment: Alignment.center,
 
-            children: [
-              ClipPath(
-                clipper: CustomReatangleClipper(),
-                child: Container(
-                  height: MediaQuery.sizeOf(context).height * 0.25,
-                  color: primaryColor,
-                ),
-              ),
-              // Image.asset("assest/images/Ellipse 1.png", fit: BoxFit.fill),
-              Center(
-                child: CircleAvatar(
-                  radius: 60,
-                  backgroundColor: Colors.white,
-                  child: CircleAvatar(
-                    radius: 55,
-                    backgroundImage: NetworkImage(
-                      'https://as2.ftcdn.net/v2/jpg/02/14/74/61/1000_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg',
-                    ), // Add your image asset
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 60),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.sizeOf(context).width * 0.1,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  flex: 6,
-                  child: infoCard(
-                    "Total Delivery\nAmount",
-                    "\$0.00",
-                    primaryColor,
+                ClipPath(
+                  clipper: CustomReatangleClipper(),
+                  child: Container(
+                    height: MediaQuery.sizeOf(context).height * 0.25,
+                    color: primaryColor,
                   ),
                 ),
-                Spacer(),
-                Expanded(
-                  flex: 6,
-                  child: infoCard(
-                    "Total Orders\nCompleted",
-                    "0",
-                    secondaryColor,
+                // Image.asset("assest/images/Ellipse 1.png", fit: BoxFit.fill),
+                Center(
+                  child: CircleAvatar(
+                    radius: 60,
+                    backgroundColor: Colors.white,
+                    child: CircleAvatar(
+                      radius: 55,
+                      backgroundImage: NetworkImage(
+                        'https://as2.ftcdn.net/v2/jpg/02/14/74/61/1000_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg',
+                      ), // Add your image asset
+                    ),
                   ),
                 ),
               ],
             ),
-          ),
-          const SizedBox(height: 20),
-          profileOption(Icons.person, "Md Habib Khan"),
-          profileOption(Icons.badge, "015415"),
-          profileOption(Icons.phone, "055********"),
-          profileOption(
-            Icons.lock,
-            "Change Password",
-            trailing: const Icon(
-              Icons.arrow_forward_ios,
-              size: 18,
-              color: primaryColor,
+            const SizedBox(height: 60),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.sizeOf(context).width * 0.1,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    flex: 6,
+                    child: infoCard(
+                      "Total Delivery\nAmount",
+                      "\$0.00",
+                      primaryColor,
+                    ),
+                  ),
+                  Spacer(),
+                  Expanded(
+                    flex: 6,
+                    child: infoCard(
+                      "Total Orders\nCompleted",
+                      "0",
+                      secondaryColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            ontap: () {
-              commonNavigation(context, pageName: RiderResetPasswordPage());
-            },
-          ),
-          profileOption(
-            Icons.language,
-            "Change Language",
-            trailing: const Icon(
-              Icons.arrow_forward_ios,
-              size: 18,
-              color: primaryColor,
+            const SizedBox(height: 20),
+            profileOption(Icons.person, "Md Habib Khan"),
+            profileOption(Icons.badge, "015415"),
+            profileOption(Icons.phone, "055********"),
+            profileOption(
+              Icons.lock,
+              "Change Password",
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                size: 18,
+                color: primaryColor,
+              ),
+              ontap: () {
+                commonNavigation(context, pageName: RiderResetPasswordPage());
+              },
             ),
-            ontap: () {
-              commonNavigation(context, pageName: RiderLanguagePage());
-            },
-          ),
-          profileOption(
-            Icons.location_on,
-            "Current Location",
-            trailing: const Icon(Icons.edit, size: 18, color: primaryColor),
-            ontap: () {
-              commonNavigation(context, pageName: RiderLocationPage());
-            },
-          ),
-        ],
+            profileOption(
+              Icons.language,
+              "Change Language",
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                size: 18,
+                color: primaryColor,
+              ),
+              ontap: () {
+                commonNavigation(context, pageName: RiderLanguagePage());
+              },
+            ),
+            profileOption(
+              Icons.location_on,
+              "Current Location",
+              trailing: const Icon(Icons.edit, size: 18, color: primaryColor),
+              ontap: () {
+                commonNavigation(context, pageName: RiderLocationPage());
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -152,7 +154,7 @@ class _RiderProfilePageState extends State<RiderProfilePage> {
             value,
             alinment: TextAlign.center,
             color: Colors.white,
-            size: 16,
+            size: 14,
             fontWeigth: FontWeight.bold,
           ),
         ],

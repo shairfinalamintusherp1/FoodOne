@@ -23,12 +23,12 @@ class _RiderLanguagePageState extends State<RiderLanguagePage> {
         backgroundColor: Colors.transparent,
         flexibleSpace: ClipPath(
           clipper: CustomAppBarClipper(),
-          child: Container(height: 140, color: primaryColor),
+          child: Container(height: 140.0, color: primaryColor),
         ),
 
         title: commonText(
           "Language",
-          size: 21,
+          size: 21.0,
           fontWeigth: FontWeight.w500,
           color: whiteColor,
         ),
@@ -39,18 +39,18 @@ class _RiderLanguagePageState extends State<RiderLanguagePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10),
+            SizedBox(height: 10.0),
             Expanded(
               child: ListView.separated(
-                separatorBuilder: (context, index) => SizedBox(height: 16),
+                separatorBuilder: (context, index) => SizedBox(height: 16.0),
                 itemCount: countryList.length,
                 itemBuilder: (context, index) {
                   final country = countryList[index];
                   return Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(10.0),
                       border: Border.all(
-                        width: 2,
+                        width: 2.0,
 
                         color:
                             selectedCountry == country.name
@@ -59,19 +59,19 @@ class _RiderLanguagePageState extends State<RiderLanguagePage> {
                       ),
                     ),
                     child: Card(
-                      margin: EdgeInsets.all(0),
+                      margin: EdgeInsets.all(0.0),
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: ListTile(
                         leading: commonText(
                           country.flag,
-                          size: 24,
+                          size: 24.0,
                         ), // Display country flag
                         title: commonText(
                           country.name,
-                          size: 16,
+                          size: 14.0,
                           fontWeigth: FontWeight.w500,
                         ),
                         trailing:

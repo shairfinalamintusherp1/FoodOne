@@ -15,7 +15,7 @@ class RiderEditProfilePage extends StatelessWidget {
 
         title: commonText(
           "Edit Profile",
-          size: 21,
+          size: 21.0,
           fontWeigth: FontWeight.w500,
           color: whiteColor,
         ),
@@ -27,14 +27,14 @@ class RiderEditProfilePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 30),
+              SizedBox(height: 30.0),
               Center(
                 child: Container(
                   child: Stack(
                     children: [
                       Container(
-                        width: 120,
-                        height: 120,
+                        width: 120.0,
+                        height: 120.0,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.black,
@@ -51,8 +51,8 @@ class RiderEditProfilePage extends StatelessWidget {
                         bottom: 0,
                         right: 0,
                         child: Container(
-                          width: 35,
-                          height: 35,
+                          width: 35.0,
+                          height: 35.0,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.white,
@@ -64,25 +64,25 @@ class RiderEditProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 30.0),
 
               commonTextField(text: "Full Name", color: Colors.black12),
-              SizedBox(height: 20),
+              SizedBox(height: 20.0),
 
               commonTextField(text: "Email", color: Colors.black12),
-              SizedBox(height: 20),
+              SizedBox(height: 20.0),
 
               commonTextField(
                 text: "Phone Number (Optional)",
                 color: Colors.black12,
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 20.0),
 
               commonTextField(text: "Password", color: Colors.black12),
-              SizedBox(height: 20),
+              SizedBox(height: 20.0),
 
               commonTextField(text: "Confirm Password", color: Colors.black12),
-              SizedBox(height: 30),
+              SizedBox(height: 30.0),
 
               // Update Button
               commonButton(

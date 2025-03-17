@@ -100,7 +100,7 @@ class _EmailVarificationPageState extends State<EmailVarificationPage> {
               children: [
                 commonText(
                   "Didn’t Receive Code? ",
-                  size: 14,
+                  size: 12,
                   color: textSecondaryColor,
                 ),
                 GestureDetector(

@@ -38,22 +38,22 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
         elevation: 0,
         title: commonText(
           "Orders Details",
-          size: 20,
+          size: 21.0,
           fontWeigth: FontWeight.bold,
           color: Colors.white,
         ),
 
         flexibleSpace: ClipPath(
           clipper: CustomAppBarClipper(),
-          child: Container(height: 140, color: primaryColor),
+          child: Container(height: 140.0, color: primaryColor),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10),
+            SizedBox(height: 10.0),
             TabBar(
               controller: _tabController,
               indicatorColor: Colors.transparent,
@@ -109,13 +109,13 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
                   isBold: true,
                 ),
               ),
-              commonText("\$20.0", size: 16, fontWeigth: FontWeight.w600),
+              commonText("\$20.0", size: 14.0, fontWeigth: FontWeight.w600),
             ],
           ),
           buildRichText("Order Accepted", ""),
           buildRichText("Time:  ", "19 Feb 2025, 02:20"),
           buildRichText("Payment Method:  ", "Cash on delivery"),
-          const Divider(height: 30),
+          const Divider(height: 30.0),
 
           /// Customer Location
           sectionTitle(Icons.location_on, "Customer Location"),
@@ -126,8 +126,8 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
                 "Sultan's Dine - 16, Ranibazar, Rajshahi 6100, Bangladesh",
                 Image.network(
                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIpKDxZRwlC6IN-Kmuz3rxqnch3opGTzG4pA&s",
-                  width: 120,
-                  height: 80,
+                  width: 120.0,
+                  height: 80.0,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -146,8 +146,8 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
             "Sultan's Dine - 16, Ranibazar, Rajshahi 6100, Bangladesh",
             Image.network(
               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIpKDxZRwlC6IN-Kmuz3rxqnch3opGTzG4pA&s",
-              width: 120,
-              height: 80,
+              width: 120.0,
+              height: 80.0,
               fit: BoxFit.cover,
             ),
           ),
@@ -161,8 +161,8 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
             "2 hours ago",
             Image.network(
               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIpKDxZRwlC6IN-Kmuz3rxqnch3opGTzG4pA&s",
-              width: 120,
-              height: 80,
+              width: 120.0,
+              height: 80.0,
               fit: BoxFit.cover,
             ),
           ),
@@ -170,7 +170,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
           /// Contact Number
           sectionTitle(Icons.phone, "Contact Number"),
           contactCard(),
-          const SizedBox(height: 180),
+          const SizedBox(height: 180.0),
         ],
       ),
     );
@@ -206,27 +206,27 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
             ),
           ),
 
-          SizedBox(height: 10),
+          SizedBox(height: 10.0),
           commonTextField(
             text: "Reason for cancellation",
             maxLine: 5,
             color: primaryColor,
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 10.0),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               commonButton(
                 text: "Done",
-                width: 100,
-                height: 50,
+                width: 100.0,
+                height: 50.0,
                 textColor: Colors.white,
               ),
             ],
           ),
-          SizedBox(height: 180),
-          SizedBox(height: 20),
+          SizedBox(height: 180.0),
+          SizedBox(height: 20.0),
         ],
       ),
     );
@@ -243,7 +243,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
               backgroundColor: isCompleted ? Colors.pink : Colors.grey,
               child: Icon(Icons.check, size: 12, color: Colors.white),
             ),
-            if (hasLine) Container(width: 2, height: 40, color: Colors.grey),
+            if (hasLine) Container(width: 2, height: 40.0, color: Colors.grey),
           ],
         ),
         SizedBox(width: 10),
@@ -277,7 +277,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
       child: RichText(
         text: TextSpan(
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 12,
             color: Colors.black,
           ), // Default text style
           children: [
@@ -285,14 +285,14 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
               text: label,
               style: TextStyle(
                 fontWeight: FontWeight.w500,
-                fontSize: 16,
+                fontSize: 14,
               ), // Bold label
             ),
             TextSpan(
               text: value,
               style: TextStyle(
                 color: color,
-                fontSize: 14,
+                fontSize: 12,
                 fontWeight: (isBold) ? FontWeight.bold : FontWeight.normal,
               ), // Normal value
             ),
@@ -320,7 +320,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                commonText(name, fontWeigth: FontWeight.bold, size: 16),
+                commonText(name, fontWeigth: FontWeight.bold, size: 14),
                 commonText(address, color: textPrimaryLightColor, size: 12),
               ],
             ),
@@ -356,7 +356,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    commonText(name, fontWeigth: FontWeight.bold, size: 16),
+                    commonText(name, fontWeigth: FontWeight.bold, size: 14),
                     commonText(details, color: textPrimaryLightColor, size: 12),
                   ],
                 ),
@@ -365,7 +365,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
           ),
           Positioned(
             right: 10,
-            child: commonText(price, fontWeigth: FontWeight.bold, size: 16),
+            child: commonText(price, fontWeigth: FontWeight.bold, size: 14),
           ),
           Positioned(
             right: 10,
@@ -400,7 +400,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
                   commonText(
                     "Call your support",
                     fontWeigth: FontWeight.bold,
-                    size: 16,
+                    size: 14,
                   ),
                   commonText("055*********", color: textPrimaryLightColor),
                 ],
@@ -446,13 +446,13 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
         children: [
           commonText(
             title,
-            size: 16,
+            size: 14,
             fontWeigth: FontWeight.w500,
             color: Colors.white,
           ),
           commonText(
             title,
-            size: 16,
+            size: 14,
             fontWeigth: FontWeight.w500,
             color: Colors.white,
           ),

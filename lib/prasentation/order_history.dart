@@ -30,20 +30,20 @@ class RiderOrderHistoryPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         flexibleSpace: ClipPath(
           clipper: CustomAppBarClipper(),
-          child: Container(height: 140, color: primaryColor),
+          child: Container(height: 140.0, color: primaryColor),
         ),
 
         title: commonText(
           "Orders History",
-          size: 21,
+          size: 21.0,
           fontWeigth: FontWeight.w500,
           color: whiteColor,
         ),
         centerTitle: true,
       ),
       body: ListView.separated(
-        separatorBuilder: (context, index) => SizedBox(height: 4),
-        padding: EdgeInsets.all(16),
+        separatorBuilder: (context, index) => SizedBox(height: 4.0),
+        padding: EdgeInsets.all(16.0),
         itemCount: orders.length,
         itemBuilder: (context, index) {
           return buildOrderCard(context, orders[index]);
@@ -63,9 +63,9 @@ class RiderOrderHistoryPage extends StatelessWidget {
           Card(
             color: Colors.white,
             elevation: 2,
-            margin: EdgeInsets.only(bottom: 10),
+            margin: EdgeInsets.only(bottom: 10.0),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.0),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,13 +73,13 @@ class RiderOrderHistoryPage extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 8,
+                    horizontal: 12.0,
+                    vertical: 8.0,
                   ),
                   child: Row(
                     children: [
                       Icon(Icons.access_time, color: Colors.black),
-                      SizedBox(width: 5),
+                      SizedBox(width: 5.0),
                       commonText(order['time'], color: Colors.black),
                       Spacer(),
                       buildStatusButton(order['status']),
@@ -99,11 +99,11 @@ class RiderOrderHistoryPage extends StatelessWidget {
                         isBold: true,
                         color: primaryColor,
                       ),
-                      SizedBox(height: 8),
+                      SizedBox(height: 8.0),
                       buildRichText('Time: ', order['date']),
-                      SizedBox(height: 8),
+                      SizedBox(height: 8.0),
                       buildRichText('Payment Method: ', order['payment']),
-                      SizedBox(height: 20),
+                      SizedBox(height: 20.0),
                     ],
                   ),
                 ),
@@ -115,7 +115,7 @@ class RiderOrderHistoryPage extends StatelessWidget {
             right: 20,
             child: commonText(
               order['amount'],
-              size: 18,
+              size: 18.0,
               fontWeigth: FontWeight.bold,
             ),
           ),
@@ -129,9 +129,9 @@ class RiderOrderHistoryPage extends StatelessWidget {
     Color bgColor = status == "Completed" ? secondaryColor : primaryColor;
     return commonButton(
       text: status,
-      width: 100,
-      height: 40,
-      fontSize: 14,
+      width: 100.0,
+      height: 40.0,
+      fontSize: 12.0,
       color: bgColor,
       textColor: Colors.white,
     );
@@ -146,11 +146,11 @@ class RiderOrderHistoryPage extends StatelessWidget {
   }) {
     return RichText(
       text: TextSpan(
-        style: TextStyle(fontSize: 14, color: color ?? Colors.black),
+        style: TextStyle(fontSize: 12.0, color: color ?? Colors.black),
         children: [
           TextSpan(
             text: label,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.0),
           ),
           TextSpan(text: value),
         ],

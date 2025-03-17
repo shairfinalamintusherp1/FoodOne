@@ -47,13 +47,13 @@ class _SignUpPageState extends State<SignUpPage> {
                         text: "Welcome! ",
                         style: TextStyle(
                           color: primaryDarkColor,
-                          fontSize: 16,
+                          fontSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       TextSpan(
                         text: "Please fill the form to continue.",
-                        style: TextStyle(color: textPrimaryColor, fontSize: 16),
+                        style: TextStyle(color: textPrimaryColor, fontSize: 14),
                       ),
                     ],
                   ),
