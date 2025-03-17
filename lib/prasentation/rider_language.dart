@@ -20,7 +20,12 @@ class _RiderLanguagePageState extends State<RiderLanguagePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: primaryColor,
+        backgroundColor: Colors.transparent,
+        flexibleSpace: ClipPath(
+          clipper: CustomAppBarClipper(),
+          child: Container(height: 140, color: primaryColor),
+        ),
+
         title: commonText(
           "Language",
           size: 21,

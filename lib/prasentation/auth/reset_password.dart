@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodone/prasentation/rider_root_page.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
@@ -35,10 +36,15 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
             commonTextField(
               text: "Confirm Password",
               prefixIxon: Icon(Icons.email_outlined, color: primaryColor),
-              controller: passwordController,
+              controller: confirmPasswordController,
             ),
             Spacer(),
-            commonButton(text: "Continue"),
+            commonButton(
+              text: "Continue",
+              onPressedButton: () {
+                commonNavigation(context, pageName: RootPage());
+              },
+            ),
             SizedBox(height: 10),
           ],
         ),

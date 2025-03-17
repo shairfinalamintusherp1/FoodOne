@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodone/prasentation/auth/reset_password.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
@@ -141,8 +142,7 @@ class _EmailVarificationPageState extends State<EmailVarificationPage> {
             commonButton(
               text: "Continue",
               onPressedButton: () {
-                // Handle Continue
-                print('Continue');
+                commonNavigation(context, pageName: ResetPasswordPage());
               },
             ),
             SizedBox(height: 20),

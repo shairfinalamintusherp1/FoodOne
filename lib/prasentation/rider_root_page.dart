@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foodone/prasentation/order_history.dart';
 import 'package:foodone/prasentation/rider_dashboard_page.dart';
+import 'package:foodone/prasentation/rider_profile.dart';
+import 'package:foodone/prasentation/rider_withdraw.dart';
 import 'package:foodone/res/color.dart';
 
 class RootPage extends StatefulWidget {
@@ -13,7 +16,7 @@ class _RootPageState extends State<RootPage> {
   // List of pages to display for each tab
   final List<Widget> _pages = [
     DashboardPage(), // Replace with your Dashboard page
-    Container(), Container(), Container(),
+    RiderOrderHistoryPage(), RiderWithdraw(), RiderProfilePage(),
   ];
 
   // Handle tab selection

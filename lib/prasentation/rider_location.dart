@@ -3,14 +3,14 @@ import 'package:foodone/models/country_model.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
-class LocationPage extends StatefulWidget {
-  const LocationPage({super.key});
+class RiderLocationPage extends StatefulWidget {
+  const RiderLocationPage({super.key});
 
   @override
-  State<LocationPage> createState() => _LocationPageState();
+  State<RiderLocationPage> createState() => _RiderLocationPageState();
 }
 
-class _LocationPageState extends State<LocationPage> {
+class _RiderLocationPageState extends State<RiderLocationPage> {
   List<CountryModel> countryList = [
     CountryModel(name: "Indonesia", code: "+62", flag: "🇮🇩"),
     CountryModel(name: "Riyadh", code: "+966", flag: "🇸🇦"),
@@ -22,7 +22,12 @@ class _LocationPageState extends State<LocationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: primaryColor,
+        backgroundColor: Colors.transparent,
+        flexibleSpace: ClipPath(
+          clipper: CustomAppBarClipper(),
+          child: Container(height: 140, color: primaryColor),
+        ),
+
         title: commonText(
           "Location",
           size: 21,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodone/prasentation/auth/email_verification.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
@@ -35,7 +36,14 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
               controller: emailController,
             ),
             Spacer(),
-            commonButton(text: "Continue"),
+            commonButton(
+              text: "Continue",
+              onPressedButton:
+                  () => commonNavigation(
+                    context,
+                    pageName: EmailVarificationPage(),
+                  ),
+            ),
             SizedBox(height: 10),
           ],
         ),

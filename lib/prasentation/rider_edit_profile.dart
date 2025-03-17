@@ -7,7 +7,12 @@ class RiderEditProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: primaryColor,
+        backgroundColor: Colors.transparent,
+        flexibleSpace: ClipPath(
+          clipper: CustomAppBarClipper(),
+          child: Container(height: 140, color: primaryColor),
+        ),
+
         title: commonText(
           "Edit Profile",
           size: 21,

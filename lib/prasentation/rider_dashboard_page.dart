@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodone/prasentation/rider_order_details.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
@@ -11,37 +12,184 @@ class _DashboardPageState extends State<DashboardPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
+  List<Map<String, dynamic>> orderNotifications = [
+    {
+      'orderNo': '#JFUJ001',
+      'time': '5 minutes ago',
+      'date': '19 Feb 2025, 0:2:20',
+      'payment': 'Cash on delivery',
+      'status': 'pending',
+    },
+    {
+      'orderNo': '#JFUJ002',
+      'time': '10 minutes ago',
+      'date': '19 Feb 2025, 0:5:45',
+      'payment': 'Online Payment',
+      'status': 'pending',
+    },
+    {
+      'orderNo': '#JFUJ001',
+      'time': '5 minutes ago',
+      'date': '19 Feb 2025, 0:2:20',
+      'payment': 'Cash on delivery',
+      'status': 'pending',
+    },
+    {
+      'orderNo': '#JFUJ002',
+      'time': '10 minutes ago',
+      'date': '19 Feb 2025, 0:5:45',
+      'payment': 'Online Payment',
+      'status': 'pending',
+    },
+    {
+      'orderNo': '#JFUJ001',
+      'time': '5 minutes ago',
+      'date': '19 Feb 2025, 0:2:20',
+      'payment': 'Cash on delivery',
+      'status': 'pending',
+    },
+    {
+      'orderNo': '#JFUJ002',
+      'time': '10 minutes ago',
+      'date': '19 Feb 2025, 0:5:45',
+      'payment': 'Online Payment',
+      'status': 'pending',
+    },
+    {
+      'orderNo': '#JFUJ001',
+      'time': '5 minutes ago',
+      'date': '19 Feb 2025, 0:2:20',
+      'payment': 'Cash on delivery',
+      'status': 'pending',
+    },
+    {
+      'orderNo': '#JFUJ002',
+      'time': '10 minutes ago',
+      'date': '19 Feb 2025, 0:5:45',
+      'payment': 'Online Payment',
+      'status': 'pending',
+    },
+    {
+      'orderNo': '#JFUJ001',
+      'time': '5 minutes ago',
+      'date': '19 Feb 2025, 0:2:20',
+      'payment': 'Cash on delivery',
+      'status': 'pending',
+    },
+    {
+      'orderNo': '#JFUJ002',
+      'time': '10 minutes ago',
+      'date': '19 Feb 2025, 0:5:45',
+      'payment': 'Online Payment',
+      'status': 'pending',
+    },
+  ];
+
+  List<Map<String, dynamic>> orderedOrders = [
+    {
+      'orderNo': '#JFUJ003',
+      'time': '15 minutes ago',
+      'date': '19 Feb 2025, 0:15:30',
+      'payment': 'Cash on delivery',
+      'status': 'accepted',
+    },
+    {
+      'orderNo': '#JFUJ004',
+      'time': '20 minutes ago',
+      'date': '19 Feb 2025, 0:20:10',
+      'payment': 'Credit Card',
+      'status': 'accepted',
+    },
+    {
+      'orderNo': '#JFUJ003',
+      'time': '15 minutes ago',
+      'date': '19 Feb 2025, 0:15:30',
+      'payment': 'Cash on delivery',
+      'status': 'accepted',
+    },
+    {
+      'orderNo': '#JFUJ004',
+      'time': '20 minutes ago',
+      'date': '19 Feb 2025, 0:20:10',
+      'payment': 'Credit Card',
+      'status': 'accepted',
+    },
+    {
+      'orderNo': '#JFUJ003',
+      'time': '15 minutes ago',
+      'date': '19 Feb 2025, 0:15:30',
+      'payment': 'Cash on delivery',
+      'status': 'accepted',
+    },
+    {
+      'orderNo': '#JFUJ004',
+      'time': '20 minutes ago',
+      'date': '19 Feb 2025, 0:20:10',
+      'payment': 'Credit Card',
+      'status': 'accepted',
+    },
+    {
+      'orderNo': '#JFUJ003',
+      'time': '15 minutes ago',
+      'date': '19 Feb 2025, 0:15:30',
+      'payment': 'Cash on delivery',
+      'status': 'accepted',
+    },
+    {
+      'orderNo': '#JFUJ004',
+      'time': '20 minutes ago',
+      'date': '19 Feb 2025, 0:20:10',
+      'payment': 'Credit Card',
+      'status': 'accepted',
+    },
+    {
+      'orderNo': '#JFUJ003',
+      'time': '15 minutes ago',
+      'date': '19 Feb 2025, 0:15:30',
+      'payment': 'Cash on delivery',
+      'status': 'accepted',
+    },
+    {
+      'orderNo': '#JFUJ004',
+      'time': '20 minutes ago',
+      'date': '19 Feb 2025, 0:20:10',
+      'payment': 'Credit Card',
+      'status': 'accepted',
+    },
+  ];
+
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
-    _tabController.addListener(_handleTabSelection); // Listen for tab changes
+    _tabController.addListener(() {
+      setState(() {}); // Refresh UI when tab changes
+    });
   }
 
   @override
   void dispose() {
-    _tabController.removeListener(_handleTabSelection);
     _tabController.dispose();
     super.dispose();
-  }
-
-  // Handle tab selection
-  void _handleTabSelection() {
-    setState(() {}); // Update UI when tab changes
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        flexibleSpace: ClipPath(
+          clipper: CustomAppBarClipper(),
+          child: Container(height: 140, color: primaryColor),
+        ),
         title: commonText(
           'Foodi Station',
           size: 20,
           fontWeigth: FontWeight.bold,
-          color: whiteColor,
+          color: Colors.white,
         ),
         centerTitle: true,
-        backgroundColor: primaryColor,
+
         elevation: 0,
       ),
       body: Padding(
@@ -51,109 +199,21 @@ class _DashboardPageState extends State<DashboardPage>
           children: [
             TabBar(
               controller: _tabController,
-              indicator: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.transparent, // Hide the default indicator
-              ),
-              labelColor: whiteColor,
-
+              indicatorColor: Colors.transparent,
               dividerColor: Colors.transparent,
-
+              labelColor: whiteColor,
               tabs: [
-                // Order Notification Tab
-                Container(
-                  padding: EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color:
-                        _tabController.index == 0
-                            ? primaryColor
-                            : secondaryColor, // Dynamic color based on selection
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          commonText(
-                            "1 ",
-                            size: 16,
-                            color: whiteColor,
-                            fontWeigth: FontWeight.bold,
-                          ),
-                          Icon(Icons.notifications_active, color: whiteColor),
-                        ],
-                      ),
-                      commonText(
-                        "Order Notification",
-                        size: 16,
-                        color: whiteColor,
-                        fontWeigth: FontWeight.bold,
-                      ),
-                    ],
-                  ),
-                ),
-                // Ordered Tab
-                Container(
-                  padding: EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color:
-                        _tabController.index == 1
-                            ? primaryColor
-                            : secondaryColor, // Dynamic color based on selection
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          commonText(
-                            "1 ",
-                            size: 16,
-                            color: whiteColor,
-                            fontWeigth: FontWeight.bold,
-                          ),
-                          Container(
-                            width: 20,
-                            height: 20,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: whiteColor,
-                            ),
-                            child: FittedBox(
-                              child: Icon(
-                                Icons.done_rounded,
-                                color: secondaryColor,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      commonText(
-                        "Ordered",
-                        size: 16,
-                        color: whiteColor,
-                        fontWeigth: FontWeight.bold,
-                      ),
-                    ],
-                  ),
-                ),
+                buildTab("Order Notification", Icons.notifications_active, 0),
+                buildTab("Ordered", Icons.done_rounded, 1),
               ],
             ),
             SizedBox(height: 20),
-            // TabBarView
             Expanded(
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  // Content for Order Notification Tab
-                  buildOrderNotificationTab(context),
-
-                  // Content for Ordered Tab
-                  buildOrderedTab(context),
+                  buildOrderList(orderNotifications, "pending"),
+                  buildOrderList(orderedOrders, "accepted"),
                 ],
               ),
             ),
@@ -163,81 +223,122 @@ class _DashboardPageState extends State<DashboardPage>
     );
   }
 
-  Widget buildOrderNotificationTab(BuildContext context) {
+  // Builds each tab with a dynamic selection
+  Widget buildTab(String title, IconData icon, int index) {
+    bool isSelected = _tabController.index == index;
+    return Container(
+      padding: EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: isSelected ? primaryColor : secondaryColor,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              commonText(
+                "${index == 0 ? orderNotifications.length : orderedOrders.length} ",
+                size: 16,
+                color: Colors.white,
+                fontWeigth: FontWeight.bold,
+              ),
+              Icon(icon, color: Colors.white),
+            ],
+          ),
+          commonText(
+            title,
+            size: 16,
+            color: whiteColor,
+            fontWeigth: FontWeight.bold,
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Builds a dynamic order list
+  Widget buildOrderList(List<Map<String, dynamic>> orders, String statusType) {
+    return ListView.builder(
+      itemCount: orders.length,
+      itemBuilder: (context, index) {
+        var order = orders[index];
+        return buildOrderCard(order, statusType);
+      },
+    );
+  }
+
+  // Builds each order card dynamically
+  Widget buildOrderCard(Map<String, dynamic> order, String statusType) {
     return Card(
-      color: whiteColor,
+      color: Colors.white,
+      margin: EdgeInsets.only(bottom: 10),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: [
+            Row(
+              children: [
+                Icon(Icons.watch_later_outlined),
+                SizedBox(width: 5),
+                commonText(order['time']),
+                Spacer(),
+                if (statusType == "pending") ...[
                   Expanded(
-                    child: Row(
-                      children: [
-                        Icon(Icons.watch_later_outlined),
-                        commonText("5 minutes ago"),
-                      ],
+                    child: commonButton(
+                      text: "Accept",
+                      onPressedButton: () {
+                        showAcceptDialog(context, order);
+                      },
+                      height: 40,
                     ),
                   ),
                   SizedBox(width: 10),
                   Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: commonButton(
-                            text: "Accept",
-                            onPressedButton: () {
-                              showAcceptDialog(context);
-                            },
-                            height: 40,
-                          ),
-                        ),
-                        SizedBox(width: 10),
-                        Expanded(
-                          child: commonButton(
-                            text: "Cancel",
-                            height: 40,
-                            color: secondaryColor,
-                          ),
-                        ),
-                      ],
+                    child: commonButton(
+                      text: "Cancel",
+                      height: 40,
+                      color: secondaryColor,
+                      onPressedButton: () {
+                        setState(() {
+                          orderNotifications.remove(order);
+                        });
+                      },
                     ),
                   ),
+                ] else ...[
+                  Expanded(child: commonButton(text: "Accepted", height: 40)),
                 ],
-              ),
+              ],
             ),
-
             Divider(),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            InkWell(
+              onTap: () {
+                if (statusType != "pending") {
+                  commonNavigation(context, pageName: OrderDetailsPage());
+                }
+              },
               child: Row(
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 4),
-                      commonText(
-                        'Order No: #JFUJ000',
-                        size: 16,
-                        fontWeigth: FontWeight.bold,
-                        color: textPrimaryColor,
-                      ),
-                      SizedBox(height: 10),
-                      commonText(
-                        'Time: 19 Feb 2025, 0:2:20',
-                        size: 14,
-                        color: textSecondaryColor,
-                      ),
-                      SizedBox(height: 10),
-                      commonText(
-                        'Payment Method: Cash on delivery',
-                        size: 14,
-                        color: textSecondaryColor,
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        buildRichText(
+                          'Order No: ',
+                          order['orderNo'],
+                          isBold: true,
+                          color: primaryColor,
+                        ),
+                        SizedBox(height: 10),
+                        buildRichText('Time: ', order['date']),
+                        SizedBox(height: 10),
+                        buildRichText('Payment Method: ', order['payment']),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -248,85 +349,41 @@ class _DashboardPageState extends State<DashboardPage>
     );
   }
 
-  Widget buildOrderedTab(BuildContext context) {
-    return Card(
-      color: whiteColor,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 3,
-                    child: Row(
-                      children: [
-                        Icon(Icons.watch_later_outlined),
-                        commonText("5 minutes ago"),
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  Expanded(
-                    flex: 2,
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: commonButton(
-                            text: "Accepted",
-                            onPressedButton: () {},
-                            height: 40,
-                          ),
-                        ),
-                        SizedBox(width: 10),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+  Widget buildRichText(
+    String label,
+    String value, {
+    Color? color,
+    bool isBold = false,
+  }) {
+    return RichText(
+      text: TextSpan(
+        style: TextStyle(
+          fontSize: 14,
+          color: Colors.black,
+        ), // Default text style
+        children: [
+          TextSpan(
+            text: label,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ), // Bold label
+          ),
+          TextSpan(
+            text: value,
+            style: TextStyle(
+              fontWeight: (isBold) ? FontWeight.bold : FontWeight.w500,
+              color: color,
 
-            Divider(),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 4),
-                      commonText(
-                        'Order No: #JFUJ000',
-                        size: 16,
-                        fontWeigth: FontWeight.bold,
-                        color: textPrimaryColor,
-                      ),
-                      SizedBox(height: 10),
-                      commonText(
-                        'Time: 19 Feb 2025, 0:2:20',
-                        size: 14,
-                        color: textSecondaryColor,
-                      ),
-                      SizedBox(height: 10),
-                      commonText(
-                        'Payment Method: Cash on delivery',
-                        size: 14,
-                        color: textSecondaryColor,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+              fontSize: 14,
+            ), // Normal value
+          ),
+        ],
       ),
     );
   }
 
-  void showAcceptDialog(BuildContext context) {
+  void showAcceptDialog(BuildContext context, order) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -350,9 +407,12 @@ class _DashboardPageState extends State<DashboardPage>
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
+                Navigator.of(context).pop();
+                setState(() {
+                  orderedOrders.add(order);
+                  orderNotifications.remove(order);
+                });
                 print('Order accepted successfully');
-                // Add your logic here to handle order acceptance
               },
               child: commonText('Continue'),
             ),

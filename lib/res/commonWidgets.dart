@@ -30,11 +30,13 @@ Widget commonText(
 Widget commonButton({
   String text = "",
   Color color = primaryColor,
-  Color textColor = whiteColor,
+  Color textColor = Colors.white,
   double fontSize = 20.0,
   var width = double.infinity,
   var height = 55.0,
   VoidCallback? onPressedButton,
+  fontWeigth,
+  borderColor = Colors.transparent,
 }) {
   return InkWell(
     onTap: onPressedButton,
@@ -45,8 +47,16 @@ Widget commonButton({
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(8.0),
+        border: Border.all(width: 1, color: borderColor),
       ),
-      child: Center(child: commonText(text, size: 16, color: textColor)),
+      child: Center(
+        child: commonText(
+          text,
+          size: 16,
+          color: textColor,
+          fontWeigth: fontWeigth,
+        ),
+      ),
     ),
   );
 }
@@ -63,7 +73,7 @@ Widget commonTextField({
   dynamic onchanged,
   double? height,
 }) {
-  return Container(
+  return SizedBox(
     width: width,
     height: height,
     child: TextField(
@@ -102,7 +112,7 @@ Widget commonTextField({
 Future commonNavigation(
   BuildContext context, {
   required Widget pageName,
-  bool onlyPush = false,
+  bool onlyPush = true,
 }) {
   if (onlyPush) {
     return Navigator.push(
@@ -266,4 +276,25 @@ String? passwordValidity(String? value) {
     null;
   }
   return null;
+}
+
+class CustomAppBarClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path =
+        Path()
+          ..lineTo(0, size.height - 10)
+          ..quadraticBezierTo(
+            size.width / 2,
+            size.height + 10,
+            size.width,
+            size.height - 10,
+          )
+          ..lineTo(size.width, 0)
+          ..close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
