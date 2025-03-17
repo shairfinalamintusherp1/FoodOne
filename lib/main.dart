@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodone/prasentation/rider_root_page.dart';
+import 'package:foodone/prasentation/splash.dart';
 import 'package:foodone/res/color.dart';
 
 void main() async {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: RootPage(),
+      home: SplashPage(),
     );
   }
 }

@@ -74,6 +74,7 @@ class _EmailVarificationPageState extends State<EmailVarificationPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 30),
             commonText(
               'Email Verification',
               size: 20,

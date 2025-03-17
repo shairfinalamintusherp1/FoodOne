@@ -20,6 +20,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 30),
             commonText(
               "Forgot password?",
               fontWeigth: FontWeight.w500,

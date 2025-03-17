@@ -21,6 +21,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 30),
             commonText("Reset Password", fontWeigth: FontWeight.w500, size: 21),
             SizedBox(height: 10.0),
             commonText(
