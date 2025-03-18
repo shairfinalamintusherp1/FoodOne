@@ -53,15 +53,6 @@ class _LocationPermissionPageState extends State<LocationPermissionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: commonText(
-          "Delivered your order",
-          size: 21.0,
-          fontWeigth: FontWeight.w500,
-          color: whiteColor,
-        ),
-        centerTitle: true,
-      ),
       body: Stack(
         children: [
           FlutterMap(

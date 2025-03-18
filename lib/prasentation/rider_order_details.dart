@@ -61,21 +61,17 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
               labelColor: whiteColor,
               dividerColor: Colors.transparent,
               tabs: [
-                Expanded(
-                  child: commonButton(
-                    text: "Details",
-                    textColor: Colors.white,
-                    fontWeigth: FontWeight.w500,
-                  ),
+                commonButton(
+                  text: "Details",
+                  textColor: Colors.white,
+                  fontWeigth: FontWeight.w500,
                 ),
-                Expanded(
-                  child: commonButton(
-                    text: "Update Tracking",
-                    color: Colors.white,
-                    borderColor: primaryColor,
-                    textColor: primaryColor,
-                    fontWeigth: FontWeight.w500,
-                  ),
+                commonButton(
+                  text: "Update Tracking",
+                  color: Colors.white,
+                  borderColor: primaryColor,
+                  textColor: primaryColor,
+                  fontWeigth: FontWeight.w500,
                 ),
               ],
             ),
