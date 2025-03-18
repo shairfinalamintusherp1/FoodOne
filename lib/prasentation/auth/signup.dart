@@ -147,8 +147,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     commonText("Already have an account?"),
                     InkWell(
                       onTap:
-                          () =>
-                              commonNavigation(context, pageName: LoginPage()),
+                          () => commonNavigation(
+                            context,
+                            pageName: RiderLoginPage(),
+                          ),
                       child: commonText("  Sign in", color: primaryDarkColor),
                     ),
                   ],

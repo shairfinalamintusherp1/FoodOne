@@ -126,7 +126,7 @@ class RiderOrderTrackingPage extends StatelessWidget {
         commonText("Your Delivery Time", size: 16, fontWeigth: FontWeight.bold),
         commonText("Estimated 8:30 - 9:15 PM", size: 14, color: Colors.grey),
         SizedBox(height: 10),
-        CustomHorizontalStepper(currentStep: 2),
+        CustomHorizontalStepper(currentStep: 1),
       ],
     );
   }
@@ -161,31 +161,30 @@ class CustomHorizontalStepper extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _buildStep(icon: Icons.receipt, isActive: currentStep >= 0),
-        _buildDottedLine(isActive: currentStep >= 1),
-        _buildStep(icon: Icons.local_dining, isActive: currentStep >= 1),
-        _buildDottedLine(isActive: currentStep >= 2),
-        _buildStep(
-          icon: Icons.delivery_dining,
-          isActive: currentStep >= 2,
-          color: Colors.pink,
+        Image.asset(
+          "assest/images/booked.png",
+          color: currentStep >= 0 ? secondaryColor : primaryColor,
         ),
-        _buildDottedLine(isActive: currentStep >= 3, color: Colors.pink),
-        _buildStep(
-          icon: Icons.check_circle,
-          isActive: currentStep >= 3,
-          color: Colors.pink,
+        _buildDottedLine(isActive: currentStep >= 1),
+        Image.asset(
+          "assest/images/food_ready.png",
+          color: currentStep >= 1 ? secondaryColor : primaryColor,
+        ),
+        _buildDottedLine(isActive: currentStep >= 2),
+        Image.asset(
+          "assest/images/bike.png",
+          color: currentStep >= 2 ? secondaryColor : primaryColor,
+        ),
+
+        _buildDottedLine(isActive: currentStep >= 3, color: primaryColor),
+
+        Icon(
+          Icons.check_circle,
+          color: currentStep >= 3 ? secondaryColor : primaryColor,
+          size: 30,
         ),
       ],
     );
-  }
-
-  Widget _buildStep({
-    required IconData icon,
-    required bool isActive,
-    Color color = secondaryColor,
-  }) {
-    return Icon(icon, color: isActive ? color : primaryColor, size: 30);
   }
 
   Widget _buildDottedLine({required bool isActive, Color color = Colors.blue}) {

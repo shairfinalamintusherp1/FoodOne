@@ -6,14 +6,14 @@ import 'package:foodone/prasentation/rider%20app/rider_root_page.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+class RiderLoginPage extends StatefulWidget {
+  RiderLoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RiderLoginPage> createState() => _RiderLoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RiderLoginPageState extends State<RiderLoginPage> {
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();

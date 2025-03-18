@@ -36,20 +36,33 @@ class _RiderRootPageState extends State<RiderRootPage> {
         selectedItemColor: primaryColor, // Selected tab color
         unselectedItemColor: textSecondaryColor, // Unselected tab color
         type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
+            icon: Icon(
+              _selectedIndex == 0 ? Icons.dashboard : Icons.dashboard_outlined,
+            ),
             label: 'Dashboard',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.history),
+            icon: Icon(
+              _selectedIndex == 1 ? Icons.history : Icons.history_outlined,
+            ),
             label: 'Order History',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet_outlined),
+            icon: Icon(
+              _selectedIndex == 2
+                  ? Icons.account_balance_wallet
+                  : Icons.account_balance_wallet_outlined,
+            ),
             label: 'Withdraw',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(
+            icon: Icon(
+              _selectedIndex == 3 ? Icons.person : Icons.person_outline,
+            ),
+            label: 'Profile',
+          ),
         ],
       ),
     );
