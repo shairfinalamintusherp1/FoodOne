@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodone/models/country_model.dart';
 import 'package:foodone/prasentation/auth/login.dart';
+import 'package:foodone/prasentation/location_permission.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
@@ -82,9 +83,6 @@ class _SignUpPageState extends State<SignUpPage> {
                               setState(() {
                                 selectedCountryCode = newValue!;
                               });
-                              print(
-                                "Selected Country Code: $selectedCountryCode",
-                              );
                             },
                             items:
                                 countryList.map((CountryModel country) {
@@ -132,7 +130,15 @@ class _SignUpPageState extends State<SignUpPage> {
                   controller: confirmPassController,
                 ),
                 const SizedBox(height: 20),
-                commonButton(text: "Sign in", onPressedButton: () {}),
+                commonButton(
+                  text: "Sign in",
+                  onPressedButton: () {
+                    commonNavigation(
+                      context,
+                      pageName: LocationPermissionPage(),
+                    );
+                  },
+                ),
 
                 const SizedBox(height: 30),
                 Row(

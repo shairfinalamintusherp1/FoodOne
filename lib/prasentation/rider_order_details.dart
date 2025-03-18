@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:foodone/prasentation/order_traking_page.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
@@ -121,14 +122,19 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
           sectionTitle(Icons.location_on, "Customer Location"),
           Stack(
             children: [
-              cardDesign(
-                "Habib Khan",
-                "Sultan's Dine - 16, Ranibazar, Rajshahi 6100, Bangladesh",
-                Image.network(
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIpKDxZRwlC6IN-Kmuz3rxqnch3opGTzG4pA&s",
-                  width: 120.0,
-                  height: 80.0,
-                  fit: BoxFit.cover,
+              InkWell(
+                onTap: () {
+                  commonNavigation(context, pageName: OrderTrackingPage());
+                },
+                child: cardDesign(
+                  "Habib Khan",
+                  "Sultan's Dine - 16, Ranibazar, Rajshahi 6100, Bangladesh",
+                  Image.network(
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIpKDxZRwlC6IN-Kmuz3rxqnch3opGTzG4pA&s",
+                    width: 120.0,
+                    height: 80.0,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Positioned(

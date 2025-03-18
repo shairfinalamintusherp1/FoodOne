@@ -72,6 +72,8 @@ Widget commonTextField({
   double borderRadious = 8.0,
   dynamic onchanged,
   double? height,
+  suffixIcon,
+  Color? fillColor,
 }) {
   return SizedBox(
     width: width,
@@ -84,6 +86,9 @@ Widget commonTextField({
       decoration: InputDecoration(
         prefixIcon: prefixIxon,
         hintText: text,
+        suffixIcon: suffixIcon,
+        filled: fillColor != null, // Enable fill only if a color is provided
+        fillColor: fillColor,
         border: OutlineInputBorder(
           borderSide: BorderSide(color: color),
           borderRadius: BorderRadius.circular(borderRadious),

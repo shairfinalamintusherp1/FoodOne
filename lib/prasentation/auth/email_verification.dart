@@ -1,9 +1,13 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:foodone/prasentation/auth/reset_password.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
 class EmailVarificationPage extends StatefulWidget {
+  const EmailVarificationPage({super.key});
+
   @override
   _EmailVarificationPageState createState() => _EmailVarificationPageState();
 }
@@ -109,8 +113,6 @@ class _EmailVarificationPageState extends State<EmailVarificationPage> {
                       _isResendDisabled
                           ? null
                           : () {
-                            // Handle Resend Code
-                            print('Resend Code');
                             setState(() {
                               _isResendDisabled = true;
                               _countdownTime = 60;
