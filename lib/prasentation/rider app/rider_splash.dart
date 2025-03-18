@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:foodone/prasentation/auth/login.dart';
+import 'package:foodone/prasentation/auth/rider_login.dart';
 
 class RiderSplashPage extends StatelessWidget {
   const RiderSplashPage({super.key});

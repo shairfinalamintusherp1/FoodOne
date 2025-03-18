@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodone/models/country_model.dart';
-import 'package:foodone/prasentation/auth/login.dart';
+import 'package:foodone/prasentation/auth/rider_login.dart';
 import 'package:foodone/prasentation/auth/location_permission.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
