@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodone/prasentation/rider_root_page.dart';
+import 'package:foodone/prasentation/rider%20app/rider_root_page.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
@@ -43,7 +43,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
             commonButton(
               text: "Continue",
               onPressedButton: () {
-                commonNavigation(context, pageName: RootPage());
+                commonNavigation(context, pageName: RiderRootPage());
               },
             ),
             SizedBox(height: 10),

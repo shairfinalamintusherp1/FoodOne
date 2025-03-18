@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:foodone/prasentation/rider_order_details.dart';
+import 'package:foodone/prasentation/rider%20app/rider_order_details.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
-class DashboardPage extends StatefulWidget {
+class RiderDashboardPage extends StatefulWidget {
   @override
-  _DashboardPageState createState() => _DashboardPageState();
+  _RiderDashboardPageState createState() => _RiderDashboardPageState();
 }
 
-class _DashboardPageState extends State<DashboardPage>
+class _RiderDashboardPageState extends State<RiderDashboardPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
@@ -325,7 +325,7 @@ class _DashboardPageState extends State<DashboardPage>
             InkWell(
               onTap: () {
                 if (statusType != "pending") {
-                  commonNavigation(context, pageName: OrderDetailsPage());
+                  commonNavigation(context, pageName: RiderOrderDetailsPage());
                 }
               },
               child: Row(

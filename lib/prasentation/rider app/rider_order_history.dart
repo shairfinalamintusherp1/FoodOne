@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodone/prasentation/rider_order_details.dart';
+import 'package:foodone/prasentation/rider%20app/rider_order_details.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
@@ -56,7 +56,7 @@ class RiderOrderHistoryPage extends StatelessWidget {
   Widget buildOrderCard(BuildContext context, Map<String, dynamic> order) {
     return InkWell(
       onTap: () {
-        commonNavigation(context, pageName: OrderDetailsPage());
+        commonNavigation(context, pageName: RiderOrderDetailsPage());
       },
       child: Stack(
         children: [

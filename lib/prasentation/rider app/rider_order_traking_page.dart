@@ -4,7 +4,7 @@ import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 import 'package:latlong2/latlong.dart';
 
-class OrderTrackingPage extends StatelessWidget {
+class RiderOrderTrackingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

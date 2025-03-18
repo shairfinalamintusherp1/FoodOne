@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:foodone/prasentation/rider_edit_profile.dart';
-import 'package:foodone/prasentation/rider_language.dart';
-import 'package:foodone/prasentation/rider_location.dart';
-import 'package:foodone/prasentation/rider_reset_password.dart';
+import 'package:foodone/prasentation/rider%20app/rider_edit_profile.dart';
+import 'package:foodone/prasentation/rider%20app/rider_language.dart';
+import 'package:foodone/prasentation/rider%20app/rider_location.dart';
+import 'package:foodone/prasentation/rider%20app/rider_reset_password.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 

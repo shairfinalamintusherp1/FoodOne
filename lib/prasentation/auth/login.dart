@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodone/prasentation/auth/forget_password.dart';
 import 'package:foodone/prasentation/auth/signup.dart';
-import 'package:foodone/prasentation/location_permission.dart';
-import 'package:foodone/prasentation/rider_root_page.dart';
+import 'package:foodone/prasentation/auth/location_permission.dart';
+import 'package:foodone/prasentation/rider%20app/rider_root_page.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                 commonButton(
                   text: "One click Login",
                   onPressedButton: () {
-                    commonNavigation(context, pageName: RootPage());
+                    commonNavigation(context, pageName: RiderRootPage());
                   },
                   color: secondaryColor,
                 ),

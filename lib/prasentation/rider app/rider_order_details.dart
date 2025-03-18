@@ -1,18 +1,18 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:foodone/prasentation/order_traking_page.dart';
+import 'package:foodone/prasentation/rider%20app/rider_order_traking_page.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
 
-class OrderDetailsPage extends StatefulWidget {
-  const OrderDetailsPage({super.key});
+class RiderOrderDetailsPage extends StatefulWidget {
+  const RiderOrderDetailsPage({super.key});
 
   @override
-  State<OrderDetailsPage> createState() => _OrderDetailsPageState();
+  State<RiderOrderDetailsPage> createState() => _RiderOrderDetailsPageState();
 }
 
-class _OrderDetailsPageState extends State<OrderDetailsPage>
+class _RiderOrderDetailsPageState extends State<RiderOrderDetailsPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
@@ -120,7 +120,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
             children: [
               InkWell(
                 onTap: () {
-                  commonNavigation(context, pageName: OrderTrackingPage());
+                  commonNavigation(context, pageName: RiderOrderTrackingPage());
                 },
                 child: cardDesign(
                   "Habib Khan",

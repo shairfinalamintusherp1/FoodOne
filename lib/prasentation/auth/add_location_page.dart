@@ -2,23 +2,26 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:foodone/prasentation/add_location_page.dart';
+import 'package:foodone/prasentation/rider%20app/rider_root_page.dart';
 import 'package:foodone/res/color.dart';
 import 'package:foodone/res/commonWidgets.dart';
-
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 
-class LocationPermissionPage extends StatefulWidget {
-  const LocationPermissionPage({super.key});
+class AddLocationPage extends StatefulWidget {
+  const AddLocationPage({super.key});
 
   @override
-  _LocationPermissionPageState createState() => _LocationPermissionPageState();
+  _AddLocationPageState createState() => _AddLocationPageState();
 }
 
-class _LocationPermissionPageState extends State<LocationPermissionPage> {
+class _AddLocationPageState extends State<AddLocationPage> {
   LatLng? _currentPosition;
-  // bool _permissionGranted = false;
+  final TextEditingController countryController = TextEditingController(
+    text: "Indonesia",
+  );
+  final TextEditingController cityController = TextEditingController();
+  final TextEditingController streetController = TextEditingController();
 
   @override
   void initState() {
@@ -35,9 +38,7 @@ class _LocationPermissionPageState extends State<LocationPermissionPage> {
     if (permission == LocationPermission.always ||
         permission == LocationPermission.whileInUse) {
       _getCurrentLocation();
-    } else {
-      // setState(() => _permissionGranted = false);
-    }
+    } else {}
   }
 
   Future<void> _getCurrentLocation() async {
@@ -46,7 +47,6 @@ class _LocationPermissionPageState extends State<LocationPermissionPage> {
     );
     setState(() {
       _currentPosition = LatLng(position.latitude, position.longitude);
-      // _permissionGranted = true;
     });
   }
 
@@ -66,7 +66,7 @@ class _LocationPermissionPageState extends State<LocationPermissionPage> {
               TileLayer(
                 urlTemplate:
                     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                subdomains: ['a', 'b', 'c'],
+                subdomains: const ['a', 'b', 'c'],
               ),
               if (_currentPosition != null)
                 MarkerLayer(
@@ -116,43 +116,47 @@ class _LocationPermissionPageState extends State<LocationPermissionPage> {
               ),
             ),
           ),
-          // if (!_permissionGranted)
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+                color: Colors.transparent,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.location_on, color: Colors.pink, size: 40),
-                  const SizedBox(height: 8),
-                  const Text(
-                    "Allow Foodone to access your device?",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      commonNavigation(
-                        context,
-                        pageName: const AddLocationPage(),
-                      );
-                      // _checkLocationPermission();
-                    },
-                    child: commonText("Allow", color: primaryColor, size: 16),
-                  ),
-                  const SizedBox(width: 20),
-                  TextButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: commonText(
-                      "Don't allow",
-                      color: primaryColor,
-                      size: 16,
+                  commonTextField(
+                    text: "Indonesia",
+                    fillColor: Colors.white,
+                    controller: countryController,
+                    suffixIcon: const Icon(
+                      Icons.location_on,
+                      color: Colors.pink,
                     ),
+                  ),
+                  const SizedBox(height: 10),
+                  commonTextField(
+                    text: "City Name",
+                    fillColor: Colors.white,
+                    controller: cityController,
+                  ),
+                  const SizedBox(height: 10),
+                  commonTextField(
+                    text: "Street No.",
+                    fillColor: Colors.white,
+                    controller: streetController,
+                  ),
+                  const SizedBox(height: 20),
+                  commonButton(
+                    text: "Save",
+                    color: Colors.pink,
+                    onPressedButton: () {
+                      // Save location action
+                      commonNavigation(context, pageName: RiderRootPage());
+                    },
                   ),
                 ],
               ),

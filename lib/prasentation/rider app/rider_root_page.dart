@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:foodone/prasentation/order_history.dart';
-import 'package:foodone/prasentation/rider_dashboard_page.dart';
-import 'package:foodone/prasentation/rider_profile.dart';
-import 'package:foodone/prasentation/rider_withdraw.dart';
+import 'package:foodone/prasentation/rider%20app/rider_order_history.dart';
+import 'package:foodone/prasentation/rider%20app/rider_dashboard_page.dart';
+import 'package:foodone/prasentation/rider%20app/rider_profile.dart';
+import 'package:foodone/prasentation/rider%20app/rider_withdraw.dart';
 import 'package:foodone/res/color.dart';
 
-class RootPage extends StatefulWidget {
+class RiderRootPage extends StatefulWidget {
   @override
-  _RootPageState createState() => _RootPageState();
+  _RiderRootPageState createState() => _RiderRootPageState();
 }
 
-class _RootPageState extends State<RootPage> {
+class _RiderRootPageState extends State<RiderRootPage> {
   int _selectedIndex = 0; // Index of the selected tab
 
   // List of pages to display for each tab
   final List<Widget> _pages = [
-    DashboardPage(), // Replace with your Dashboard page
+    RiderDashboardPage(), // Replace with your Dashboard page
     RiderOrderHistoryPage(), RiderWithdraw(), RiderProfilePage(),
   ];
 
@@ -45,7 +45,10 @@ class _RootPageState extends State<RootPage> {
             icon: Icon(Icons.history),
             label: 'Order History',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.money), label: 'Withdraw'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_balance_wallet_outlined),
+            label: 'Withdraw',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
